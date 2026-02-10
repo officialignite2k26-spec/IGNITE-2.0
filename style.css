@@ -641,3 +641,20 @@ a {
     animation: none !important;
   }
 }
+/* ===========================
+   PERFORMANCE MODE 🔥
+=========================== */
+
+/* Kill heavy canvas + glow layers */
+#bgCanvas,
+.cyber-bg,
+.bg-glow {
+  display: none !important;
+}
+
+/* Fallback simple gradient bg */
+body {
+  background:
+    radial-gradient(circle at top, #0c1430, #03040a),
+    linear-gradient(180deg, #050817, #02030a) !important;
+}
