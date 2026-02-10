@@ -627,3 +627,17 @@ a {
   z-index: 10;
   pointer-events: auto !important;
 }
+.animated-bg {
+  animation: moveBg 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes moveBg {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 768px) {
+  .animated-bg {
+    animation: none !important;
+  }
+}
