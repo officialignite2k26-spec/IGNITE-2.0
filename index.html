@@ -9,13 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- <div class="cyber-bg">
-    <canvas id="bgCanvas"></canvas>
-  </div> -->
-
-  <!-- Background Effects -->
+  <!-- Background Effects (Lightweight) -->
   <div class="bg-glow"></div>
-  <div class="particles"></div>
 
   <!-- Navbar -->
   <header class="navbar">
@@ -26,9 +21,8 @@
       <a href="#schedule">Schedule</a>
       <a href="#venue">Venue</a>
       <a href="#about">About</a>
-
     </nav>
-    <a href="https://forms.gle/SvLMg3WVJ9cMUkz18" target="_blank" class="btn glow">Register Now</a>
+    <a href="https://forms.gle/SvLMg3WVJ9cMUkz18" target="_blank" class="btn glow" rel="noopener">Register Now</a>
   </header>
 
   <!-- Hero -->
@@ -39,12 +33,12 @@
       <p class="subtext">25th – 26th February 2026 · GMFC Campus, Goa</p>
 
       <div class="hero-buttons">
-        <a href="https://forms.gle/SvLMg3WVJ9cMUkz18" target="_blank" class="btn glow">Register Now</a>
+        <a href="https://forms.gle/SvLMg3WVJ9cMUkz18" target="_blank" class="btn glow" rel="noopener">Register Now</a>
         <a href="IGNITE 2.0 BROCHURE.pdf" class="btn outline" download>Download Brochure</a>
       </div>
 
       <!-- Scroll Arrow -->
-      <div class="scroll-down" id="scrollDown"></div>
+      <button class="scroll-down" id="scrollDown" aria-label="Scroll to Events"></button>
     </div>
   </section>
 
@@ -54,7 +48,6 @@
     <div class="events-grid">
       <div class="event-card" data-event="icebreaker">📽️ Ice-Breaker</div>
       <div class="event-card" data-event="hackathon">💻 Hackathon</div>
-      
       <div class="event-card" data-event="pattern">🧩 Pattern Programming</div>
       <div class="event-card" data-event="treasure">🕵️ Treasure Hunt</div>
       <div class="event-card" data-event="debug">🐞 De-Bug</div>
@@ -74,8 +67,8 @@
   <section class="section schedule" id="schedule">
     <h2>Event Schedule</h2>
     <div class="tabs">
-      <button class="tab-btn active" data-day="day1">Day 1</button>
-      <button class="tab-btn" data-day="day2">Day 2</button>
+      <button class="tab-btn active" data-day="day1" type="button">Day 1</button>
+      <button class="tab-btn" data-day="day2" type="button">Day 2</button>
     </div>
 
     <div class="schedule-container active" id="day1">
@@ -106,34 +99,34 @@
     <h2>Venue</h2>
     <p>SPES Goa Multi-Faculty College (GMFC Campus), Goa</p>
   </section>
+
+  <!-- Submissions -->
   <section class="section submissions" id="submissions">
-  <h2>Online Submissions</h2>
-  <p class="subtext">Submit your entries before the deadline to participate.</p>
+    <h2>Online Submissions</h2>
+    <p class="subtext">Submit your entries before the deadline to participate.</p>
 
-  <div class="submission-grid">
-
-    <!-- Reel -->
-    <div class="submission-card">
-      <div class="submission-img">
-        <img src="reel.png" alt="Reel Submission">
-        <div class="submission-overlay">
-          <a href="https://forms.gle/PkTCGw7G7K6Vwxr89" target="_blank" class="btn glow">Submit Reel</a>
+    <div class="submission-grid">
+      <div class="submission-card">
+        <div class="submission-img">
+          <img src="reel.png" alt="Reel Submission">
+          <div class="submission-overlay">
+            <a href="https://forms.gle/PkTCGw7G7K6Vwxr89" target="_blank" class="btn glow" rel="noopener">Submit Reel</a>
+          </div>
         </div>
+        <h3>🎥 Reel Making</h3>
+        <p>Deadline: 25 Feb · 10:00 AM</p>
       </div>
-      <h3>🎥 Reel Making</h3>
-      <p>Deadline: 25 Feb · 10:00 AM</p>
-    </div>
 
-    <!-- Meme -->
-    <div class="submission-card">
-      <div class="submission-img">
-        <img src="meme.png" alt="Meme Submission">
-        <div class="submission-overlay">
-          <a href="https://forms.gle/6utroq6ATZUAiSur6" target="_blank" class="btn glow">Submit Meme</a>
+      <div class="submission-card">
+        <div class="submission-img">
+          <img src="meme.png" alt="Meme Submission">
+          <div class="submission-overlay">
+            <a href="https://forms.gle/6utroq6ATZUAiSur6" target="_blank" class="btn glow" rel="noopener">Submit Meme</a>
+          </div>
         </div>
+        <h3>😂 Meme Making</h3>
+        <p>Deadline: 25 Feb · 10:00 AM</p>
       </div>
-      <h3>😂 Meme Making</h3>
-      <p>Deadline: 25 Feb · 10:00 AM</p>
     </div>
   </section>
 
@@ -141,10 +134,7 @@
   <section class="section about" id="about">
     <h2>About IGNITE 2.0</h2>
     <p>
-<p>
-  IGNITE 2.0 is an interclass technical and cultural fest organized by the SY BCA students of SPES Goa Multi-Faculty College, Dharbandora Goa. The event brings together students from different classes to compete, collaborate, and showcase their talents across coding, creativity, gaming, and performance-based events. IGNITE aims to promote innovation, teamwork, leadership, and healthy competition while creating a vibrant platform for students to learn, connect, and celebrate skills beyond the classroom.
-</p>
-
+      IGNITE 2.0 is an interclass technical and cultural fest organized by the SY BCA students of SPES Goa Multi-Faculty College, Dharbandora Goa. The event brings together students from different classes to compete, collaborate, and showcase their talents across coding, creativity, gaming, and performance-based events. IGNITE aims to promote innovation, teamwork, leadership, and healthy competition while creating a vibrant platform for students to learn, connect, and celebrate skills beyond the classroom.
     </p>
   </section>
 
@@ -167,20 +157,19 @@
   <!-- Contact -->
   <section class="section contact" id="contact">
     <h2>Contact</h2>
-    <p> Event Coordinator <br> Saish Naik – 7219664524</p><br>
-    <p> Co-Coordinator <br> Sagar Lamani – 9657361419</p><br>
-    <p> Assistant Coordinator <br> Anugraha Chalwadi – 9765809592</p>
+    <p>Event Coordinator <br> Saish Naik – 7219664524</p><br>
+    <p>Co-Coordinator <br> Sagar Lamani – 9657361419</p><br>
+    <p>Assistant Coordinator <br> Anugraha Chalwadi – 9765809592</p>
 
     <div class="socials">
-      <a href="https://www.instagram.com/ignite_2k26?igsh=MTc5ejc2eXhiaWoyMQ==" target="_blank">Instagram</a>
-  </div>
-
+      <a href="https://www.instagram.com/ignite_2k26/" target="_blank" rel="noopener">Instagram</a>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>© 2026 IGNITE 2.0 | Organized by SY BCA</p><br>
-    <p> Email - officialignite2k26@gmail.com</p>
+    <p>Email - officialignite2k26@gmail.com</p>
   </footer>
 
   <!-- Event Modal -->
@@ -191,7 +180,6 @@
       <div id="modalBody"></div>
     </div>
   </div>
-
 
   <script src="script.js"></script>
 </body>

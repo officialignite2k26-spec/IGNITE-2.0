@@ -418,31 +418,32 @@ const eventDetails = {
   },
 
   quiz: {
-  title: "🧠 Quiz",
-  info: `
-    <p><strong>Participants:</strong> 2 students per team from the same class (Max 20 teams – First Come First Serve)</p>
-    <p><strong>Venue:</strong> Hall</p>
-    <p><strong>Time:</strong> 10:30 AM – 11:30 AM</p>
+    title: "🧠 Quiz",
+    info: `
+      <p><strong>Participants:</strong> 2 students per team from the same class (Max 20 teams – First Come First Serve)</p>
+      <p><strong>Venue:</strong> Hall</p>
+      <p><strong>Time:</strong> 10:30 AM – 11:30 AM</p>
 
-    <h4>Rules</h4>
-    <ul>
-      <li>Conducted using Kahoot.</li>
-      <li>Three rounds: IT, GK, (Surprise).</li>
-    </ul>
+      <h4>Rules</h4>
+      <ul>
+        <li>Conducted using Kahoot.</li>
+        <li>Three rounds: IT, GK, (Surprise).</li>
+      </ul>
 
-    <h4>Restrictions</h4>
-    <ul>
-      <li>Use of mobile phones outside Kahoot is not allowed.</li>
-      <li>Any form of cheating leads to disqualification.</li>
-    </ul>
+      <h4>Restrictions</h4>
+      <ul>
+        <li>Use of mobile phones outside Kahoot is not allowed.</li>
+        <li>Any form of cheating leads to disqualification.</li>
+      </ul>
 
-    <h4>Judging Criteria</h4>
-    <ul>
-      <li>Accuracy – 60%</li>
-      <li>Speed of Response – 40%</li>
-    </ul>
-  `
-},
+      <h4>Judging Criteria</h4>
+      <ul>
+        <li>Accuracy – 60%</li>
+        <li>Speed of Response – 40%</li>
+      </ul>
+    `
+  },
+
   valedictory: {
     title: "🏁 Valedictory Function",
     info: `<p>Closing ceremony and prize distribution.</p>`
@@ -465,108 +466,47 @@ function openModal(key) {
 }
 
 document.querySelectorAll(".event-card").forEach(card => {
-  card.addEventListener("click", () => {
-    openModal(card.dataset.event);
-  });
+  card.addEventListener("click", () => openModal(card.dataset.event));
 });
 
 document.querySelectorAll(".schedule-card").forEach(card => {
-  card.addEventListener("click", () => {
-    openModal(card.dataset.event);
-  });
+  card.addEventListener("click", () => openModal(card.dataset.event));
 });
 
-closeBtn.addEventListener("click", () => {
-  modal.classList.remove("show");
-});
+closeBtn.addEventListener("click", () => modal.classList.remove("show"));
 
 modal.addEventListener("click", e => {
   if (e.target === modal) modal.classList.remove("show");
 });
 
 /* ===========================
-   PREMIUM CANVAS BACKGROUND
+   SCROLL ARROW (Fixed)
 =========================== */
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
+document.addEventListener("DOMContentLoaded", () => {
+  const arrow = document.getElementById("scrollDown");
+  const target = document.getElementById("events");
+  if (!arrow || !target) return;
 
-let w, h;
-function resize() {
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
+  const goDown = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-const dots = [];
-const DOT_COUNT = Math.min(140, Math.floor(window.innerWidth / 6));
+    const nav = document.querySelector(".navbar");
+    const navH = nav ? nav.offsetHeight : 0;
 
-for (let i = 0; i < DOT_COUNT; i++) {
-  dots.push({
-    x: Math.random() * w,
-    y: Math.random() * h,
-    vx: (Math.random() - 0.5) * 0.9,
-    vy: (Math.random() - 0.5) * 0.9,
-    r: Math.random() * 2 + 1,
-  });
-}
+    const y = target.getBoundingClientRect().top + window.pageYOffset - navH - 10;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
 
-function draw() {
-  ctx.clearRect(0, 0, w, h);
+  arrow.addEventListener("click", goDown, { passive: false });
+  arrow.addEventListener("touchstart", goDown, { passive: false });
 
-  for (let i = 0; i < dots.length; i++) {
-    const d = dots[i];
+  const onScroll = () => {
+    const hide = window.scrollY > 80;
+    arrow.style.opacity = hide ? "0" : "1";
+    arrow.style.pointerEvents = hide ? "none" : "auto";
+  };
 
-    d.x += d.vx;
-    d.y += d.vy;
-
-    if (d.x < 0 || d.x > w) d.vx *= -1;
-    if (d.y < 0 || d.y > h) d.vy *= -1;
-
-    ctx.beginPath();
-    ctx.fillStyle = "rgba(0,245,255,0.9)";
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = "#00f5ff";
-    ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-    ctx.fill();
-
-    for (let j = i + 1; j < dots.length; j++) {
-      const d2 = dots[j];
-      const dist = Math.hypot(d.x - d2.x, d.y - d2.y);
-      if (dist < 120) {
-        ctx.strokeStyle = `rgba(123,92,255,${1 - dist / 120})`;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(d.x, d.y);
-        ctx.lineTo(d2.x, d2.y);
-        ctx.stroke();
-      }
-    }
-  }
-
-  requestAnimationFrame(draw);
-}
-draw();
-
-/* ===========================
-   SCROLL ARROW
-=========================== */
-const scrollArrow = document.getElementById("scrollDown");
-
-window.addEventListener("scroll", () => {
-  scrollArrow.style.opacity = window.scrollY > 80 ? "0" : "1";
-});
-
-scrollArrow.addEventListener("click", () => {
-  document.querySelector("#events").scrollIntoView({ behavior: "smooth" });
-});
-// Smooth scroll for all anchor links
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault(); // prevent default jump
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 });
