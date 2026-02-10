@@ -468,6 +468,12 @@ footer {
    PREMIUM ANIMATED BACKGROUND
 =========================== */
 
+#bgCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 
 .scroll-down {
   margin: 150px auto 0;
