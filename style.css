@@ -608,3 +608,22 @@ footer a {
   z-index: 99999;
   pointer-events: auto !important;
 }
+canvas,
+#bgCanvas,
+.cyber-bg,
+.bg-glow,
+.particles {
+  pointer-events: none !important;
+}
+
+.navbar,
+.section,
+footer,
+.socials,
+.socials a,
+.btn,
+a {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto !important;
+}
