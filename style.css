@@ -594,3 +594,17 @@ footer {
 .particles {
   pointer-events: none;
 }
+canvas,
+.cyber-bg,
+.bg-glow,
+.particles {
+  pointer-events: none !important;
+}
+
+.socials,
+.socials a,
+footer a {
+  position: relative;
+  z-index: 99999;
+  pointer-events: auto !important;
+}
