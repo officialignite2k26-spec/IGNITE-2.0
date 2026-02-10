@@ -429,3 +429,21 @@ footer {
   .event-card { font-size: 0.82rem; padding: 16px 10px; }
   .schedule-card { font-size: 0.8rem; }
 }
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  color: #00f5ff; /* neon blue */
+  text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff;
+}
+
+.logo span{
+  color: #00f5ff;
+}
+.scroll-down{
+  position: relative;
+  z-index: 99999;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+}
