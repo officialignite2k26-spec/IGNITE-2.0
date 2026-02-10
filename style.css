@@ -582,3 +582,15 @@ footer {
     height: 130px; /* 👈 perfect mobile size */
   }
 }
+.socials a {
+  position: relative;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.cyber-bg,
+canvas,
+.bg-glow,
+.particles {
+  pointer-events: none;
+}
