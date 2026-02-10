@@ -584,12 +584,12 @@ footer {
 }
 .socials a {
   position: relative;
-  z-index: 9999;
+  z-index: 10000;
   pointer-events: auto;
 }
 
 .cyber-bg,
-canvas,
+#bgCanvas,
 .bg-glow,
 .particles {
   pointer-events: none;
