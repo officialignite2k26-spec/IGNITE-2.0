@@ -318,6 +318,13 @@ const eventDetails = {
         <li>Exceeding time limit may reduce marks.</li>
       </ul>
 
+      <h4>Note</h4>
+      <ul>
+        <li>Max limit is 4 participants there is no
+            minimum limit you can perform solo
+            also but it will count as a 1 team..</li>
+      </ul>   
+      
       <h4>Judging Criteria</h4>
       <ul>
         <li>Theme Representation – 30%</li>
@@ -434,6 +441,15 @@ const eventDetails = {
     <ul>
       <li>Use of mobile phones outside Kahoot is not allowed.</li>
       <li>Any form of cheating leads to disqualification.</li>
+    </ul>
+
+    <h4>Description</h4>
+    <ul>
+      <li>This quiz will be conducted on the Kahoot platform,
+        offering an interactive and fast-paced experience.
+        Participants compete by answering questions in real
+        time, with rankings based on correct answers and
+        response speed.</li>
     </ul>
 
     <h4>Judging Criteria</h4>
